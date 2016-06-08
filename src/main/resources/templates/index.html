@@ -1,0 +1,28 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-spring4-4.dtd">
+<html xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorator="layout">
+<body ng-controller="StudentCtrl">
+	<div layout:fragment="content">
+		<h1>Students</h1>
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>Latitude</th>
+					<th>Longitude</th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr ng-repeat="student in students">
+					<td>{{student.name}}</td>
+					<td>{{student.latitude}}</td>
+					<td>{{student.longitude}}</td>
+					<td><button type="button" class="btn btn-lg btn-primary"  ng-click="setLocation(student)">Set location</button></td>
+				</tr>
+			</tbody>
+		</table>
+
+		<script type="text/javascript" src="/js/student.js"></script>
+	</div>
+</body>
+</html>
